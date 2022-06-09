@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Tiro+Devanagari+Marathi:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    perspective: 10px;
+}
+main, footer{
+    padding: 0 1.5em;
+}
+
+
+
+/* header */
+header{
+    background: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    padding: 1em 0 10em 0;
+    text-align: center;
+    overflow: hidden;
+    background-blend-mode: multiply;
+    position: relative;
+}
+
+.img{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+.img img{
+    width: 100%;
+    height: 100vh;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 3.5vw;
+}
+nav > .socials > a{
+    padding: .8em;
+}
+nav > .socials > a > i, footer a i{
+    color: white;
+}
+.logo{
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: 1px 2px #7B7A72;
+    color: white;
+}
+.logo > span{
+    color: #b30b09;
+}
+
+.title{
+    margin-top: 2rem;
+    color: white;
+}
+.title > h1{
+    text-transform: uppercase;
+}
+.title > p{
+    margin-top: 2rem;
+    letter-spacing: 1px;
+}
+
+
+
+
+/* --------------------- main ---------------------------*/
+main {
+    margin: 0 auto;
+    max-width: 900px;
+    margin-top: 5rem;
+    padding: 0;
+}
+main > section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .info{
+    margin: 0 1rem 5rem 0;
+    padding: 1.5em;
+    padding-top: 0;
+}
+main  p{
+    font-family: 'Roboto Mono', monospace !important;
+    color: #7B7A72;
+    padding: 2em 0 2em 0;
+}
+
+.jacob img{
+    width: 100%;
+    height: 100%;
+}
+main .socials a, footer a{
+    padding-right: 2em;
+}
+main  .socials  a  i{
+    color: black;
+}
+
+
+
+
+
+/* ------------------------ footer ----------------------- */
+
+footer{
+    padding: 2em;
+    background-color: black;
+    color: #fff;
+    height: 38vh;
+    display: grid;
+    place-content: center;
+    gap: 1em;
+}
+
+footer p{
+    font-size: smaller;
+    font-family: 'Courier New';
+    text-align: center;
+}
+footer a{
+    color: #fff;
+    text-decoration: none;
+    transition: all 200ms;
+}
+footer .socials{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/* ------------- hover effect --------------- */
+
+footer a:hover{
+    color: red;
+}
+
+.socials > a > i{
+    transition:  0.75s;
+    position: relative;
+}
+
+.socials > a > i::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    transform: scaleX(0);
+    transition: 0.25s ease-in-out;
+}
+
+
+.socials > a > i:hover { 
+    color: red;
+}
+
+.socials > a > i:hover::after{
+    transform: scaleX(1);
+}
+
+
+
+
+
+
+/* ------------- media queries --------------- */
+
+@media screen and (min-width: 600px) {
+    main > section{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    main .info{
+        margin-bottom: 0;
+    }
+    .jacob img{
+        width: 15rem;
+        height: 15rem;
+        float: right;
+        border-radius: 50%;
+    }
+    footer{
+        grid-template-columns: repeat(2,1fr);
+    }
+    footer .socials{
+        grid-column: 2/3;
+        grid-row: 1;
+    }    
+}
+
+@media screen and (min-width: 800px) {
+    header{
+        padding: 2em 0 16em 0;
+    }
+    nav > .socials > a{
+        padding: 1.5em;
+    }
+    main > section{
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .jacob img{
+        width: 25rem;
+        height: 20rem;
+        border-radius: unset;
+    }
+}
+
+
+
